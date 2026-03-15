@@ -4,6 +4,8 @@ import { Characters } from './pages/Characters';
 import { Character } from './pages/Character';
 import { Locations } from './pages/Locations';
 import { Location } from './pages/Location';
+import { Episodes } from './pages/Episodes';
+import { Episode } from './pages/Episode';
 import './App.css'
 
 function App() {
@@ -23,6 +25,10 @@ function App() {
         <Route path='/locations'>
           <Route index element={<Locations />} />
           <Route path=':id' element={<Location />} />
+        </Route>
+        <Route path='/episodes'>
+          <Route index element={<Episodes />} />
+          <Route path=':id' element={<Episode />} />
         </Route>
       </Routes>
     </>
