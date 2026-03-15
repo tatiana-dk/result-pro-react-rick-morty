@@ -1,13 +1,19 @@
-import { Route, Routes } from 'react-router';
+import { Link, Route, Routes } from 'react-router';
 import { Home } from './pages/Home';
 import './App.css'
 
 function App() {
 
   return (
-    <Routes>
-      <Route path='/' element={<Home />}></Route>
-    </Routes>
+    <>
+      <Link to="/">Главная</Link>
+      <Link to="/characters">Герои</Link>
+      <Link to="/locations">Локации</Link>
+      <Link to="/episodes">Эпизоды</Link>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+    </>
   )
 }
 
