@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router';
 import { Home } from './pages/Home';
 import { Characters } from './pages/Characters';
+import { Character } from './pages/Character';
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/characters'>
           <Route index element={<Characters />} />
+          <Route path=':id' element={<Character />} />
         </Route>
       </Routes>
     </>
