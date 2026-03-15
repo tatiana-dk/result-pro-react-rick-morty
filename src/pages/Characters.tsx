@@ -1,13 +1,13 @@
-import type { CharactersProps } from "../types/characters";
 import { Link } from "react-router";
+import { characters } from '../data/characters';
 
-export function Characters({ characters }: CharactersProps) {
+export function Characters() {
     return (
         <>
             <h1>Персонажи</h1>
 
             {characters.map(character => (
-                <Link to={`/characters/:${character.id}`}>
+                <Link to={`/characters/${character.id}`}>
                     <img src={character.image} /><br />
                     <span>{character.name}</span>
                 </Link>

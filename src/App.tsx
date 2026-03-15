@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/characters'>
-          <Route index element={<Characters characters={characters} />} />
+          <Route index element={<Characters />} />
           <Route path=':id' element={<Character />} />
         </Route>
         <Route path='/locations'>
