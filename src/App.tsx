@@ -2,6 +2,8 @@ import { Link, Route, Routes } from 'react-router';
 import { Home } from './pages/Home';
 import { Characters } from './pages/Characters';
 import { Character } from './pages/Character';
+import { Locations } from './pages/Locations';
+import { Location } from './pages/Location';
 import './App.css'
 
 function App() {
@@ -17,6 +19,10 @@ function App() {
         <Route path='/characters'>
           <Route index element={<Characters />} />
           <Route path=':id' element={<Character />} />
+        </Route>
+        <Route path='/locations'>
+          <Route index element={<Locations />} />
+          <Route path=':id' element={<Location />} />
         </Route>
       </Routes>
     </>
