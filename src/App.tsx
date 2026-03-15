@@ -8,10 +8,6 @@ import { Location } from './pages/Location';
 import { Episodes } from './pages/Episodes';
 import { Episode } from './pages/Episode';
 
-import { characters } from './data/characters'
-import { locations } from './data/locations';
-import { episodes } from './data/episodes';
-
 import './App.css'
 
 function App() {
