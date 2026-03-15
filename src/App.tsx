@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Link to="/">Главная</Link>
-      <Link to="/characters">Герои</Link>
+      <Link to="/characters">Персонажи</Link>
       <Link to="/locations">Локации</Link>
       <Link to="/episodes">Эпизоды</Link>
       <Routes>
