@@ -1,14 +1,14 @@
 export interface CharacterItem {
     id: number;
     name: string;
-    status: string;
-    species: string;
+    status: 'Alive' | 'Dead' | 'unknown';
+    species: 'Human' | 'Alien';
     type: string;
-    gender: string;
+    gender: 'Male' | 'Female' | 'unknown';
     image: string;
     created: string;
 };
 
-export interface CharactersProps {
-    characters: CharacterItem[]
+export interface CharacterCardProps {
+    character: CharacterItem
 };

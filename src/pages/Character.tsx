@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useParams, useNavigate } from "react-router";
 import { characters } from '../data/characters';
+import { CharacterCard } from "../components/CharacterCard";
 
 export function Character() {
     const params = useParams();
@@ -14,6 +15,6 @@ export function Character() {
         navigate('/');
 
     return (
-        <h1>{character.name}</h1>
+        <CharacterCard character={character} />
     );
 };
