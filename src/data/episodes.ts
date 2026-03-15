@@ -1,4 +1,4 @@
-import type { EpisodeItem } from "../types/data";
+import type { EpisodeItem } from "../types/episodes";
 
 export const episodes: EpisodeItem[] = [
   {
