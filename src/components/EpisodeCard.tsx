@@ -1,11 +1,11 @@
-import type { LocationCardProps } from "../types/locations";
+import type { EpisodeCardProps } from "../types/episodes";
 
-export function LocationCard({detail}: LocationCardProps) {
+export function EpisodeCard({detail}: EpisodeCardProps) {
     return (
         <>
             <h1>{detail.name}</h1>
-            <b>Тип:</b> {detail.type}<br />
-            <b>Размеры:</b> {detail.dimension}<br />
+            <b>Air date:</b> {detail.air_date}<br />
+            <b>Эпизод:</b> {detail.episode}<br />
             <em>Дата создания: {new Date(detail.created).toLocaleString()}</em>
         </>
     );

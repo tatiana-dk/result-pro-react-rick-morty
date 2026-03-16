@@ -1,14 +1,11 @@
 import { Link, Route, Routes } from 'react-router';
 
 import { Home } from './pages/Home';
-import { Characters } from './pages/Characters';
-import { Character } from './pages/Character';
-import { Locations } from './pages/Locations';
-import { Location } from './pages/Location';
-import { Episodes } from './pages/Episodes';
-import { Episode } from './pages/Episode';
+import { Category } from './pages/Category';
+import { Detail } from './pages/Detail';
 
 import './App.css'
+import { CategoryLayout } from './layouts/CategoryLayout';
 
 function App() {
 
@@ -20,17 +17,9 @@ function App() {
       <Link to="/episodes">Эпизоды</Link>
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/characters'>
-          <Route index element={<Characters />} />
-          <Route path=':id' element={<Character />} />
-        </Route>
-        <Route path='/locations'>
-          <Route index element={<Locations />} />
-          <Route path=':id' element={<Location />} />
-        </Route>
-        <Route path='/episodes'>
-          <Route index element={<Episodes />} />
-          <Route path=':id' element={<Episode />} />
+        <Route path='/:category' element={<CategoryLayout />}>
+          <Route index element={<Category />} />
+          <Route path=':id' element={<Detail />} />
         </Route>
       </Routes>
     </>
