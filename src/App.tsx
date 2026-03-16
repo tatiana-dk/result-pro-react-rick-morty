@@ -6,15 +6,13 @@ import { Detail } from './pages/Detail';
 
 import './App.css'
 import { CategoryLayout } from './layouts/CategoryLayout';
+import { Header } from './components/Header';
 
 function App() {
 
   return (
     <>
-      <Link to="/">Главная</Link>
-      <Link to="/characters">Персонажи</Link>
-      <Link to="/locations">Локации</Link>
-      <Link to="/episodes">Эпизоды</Link>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/:category' element={<CategoryLayout />}>
