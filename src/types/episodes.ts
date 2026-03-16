@@ -5,3 +5,7 @@ export interface EpisodeItem {
     episode: string;
     created: string;
 };
+
+export interface EpisodeCardProps {
+    detail: EpisodeItem
+};

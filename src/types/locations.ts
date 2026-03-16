@@ -5,3 +5,7 @@ export interface LocationItem {
     dimension: string;
     created: string;
 };
+
+export interface LocationCardProps {
+    detail: LocationItem
+};

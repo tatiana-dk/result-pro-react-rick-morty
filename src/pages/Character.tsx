@@ -15,6 +15,6 @@ export function Character() {
         navigate('/');
 
     return (
-        <CharacterCard character={character} />
+        <CharacterCard detail={character} />
     );
 };

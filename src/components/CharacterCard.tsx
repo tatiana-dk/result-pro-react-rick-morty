@@ -37,16 +37,16 @@ function getGender(character: CharacterItem): string {
     }
 }
 
-export function CharacterCard({character}: CharacterCardProps) {
+export function CharacterCard({detail}: CharacterCardProps) {
     return (
         <>
-            <h1>{character.name}</h1>
-            <img src={character.image} />
-            <b>Статус:</b> {getStatus(character)}<br />
-            <b>Вид:</b> {getSpecies(character)}<br />
-            <b>Тип:</b> {character.type}<br />
-            <b>Пол:</b> {getGender(character)}<br />
-            <em>Дата создания: {new Date(character.created).toLocaleString()}</em>
+            <h1>{detail.name}</h1>
+            <img src={detail.image} />
+            <b>Статус:</b> {getStatus(detail)}<br />
+            <b>Вид:</b> {getSpecies(detail)}<br />
+            <b>Тип:</b> {detail.type}<br />
+            <b>Пол:</b> {getGender(detail)}<br />
+            <em>Дата создания: {new Date(detail.created).toLocaleString()}</em>
         </>
     );
 };

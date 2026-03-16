@@ -4,6 +4,7 @@ import { data } from '../data/data';
 import { CharacterCard } from "../components/CharacterCard";
 
 import type { CategoryName } from "../types/common";
+import type { CharacterItem } from "../types/characters";
 
 export function Detail() {
     const params = useParams();
@@ -19,9 +20,11 @@ export function Detail() {
     if (!detail)
         navigate('/');
 
+    const cardComponent = <CharacterCard detail={detail as CharacterItem}/>
+
     return (
         <>
-            {detail}
+            {cardComponent}
         </>
     );
 };

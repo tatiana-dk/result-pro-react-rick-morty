@@ -10,5 +10,5 @@ export interface CharacterItem {
 };
 
 export interface CharacterCardProps {
-    character: CharacterItem
+    detail: CharacterItem
 };
