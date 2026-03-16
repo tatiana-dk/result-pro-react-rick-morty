@@ -21,7 +21,7 @@ export function Detail() {
         const categoryData = data[category as CategoryName];
         if (!categoryData) return null;
         return categoryData.filter(c => String(c.id) === id)[0] || null;
-    }, [category]);
+    }, [category, id]);
 
     if (!detail)
         navigate('/');

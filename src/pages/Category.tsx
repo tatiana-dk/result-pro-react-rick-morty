@@ -34,10 +34,6 @@ export function Category() {
     return (
         <>
             <h1>Выберите {heading}</h1>
-
-            {data[category as CategoryName].map(c => (
-                <Link to={`/${category}/${c.id}`}>{c.name}</Link>
-            ))}
         </>
     );
 };

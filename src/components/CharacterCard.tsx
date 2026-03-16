@@ -41,12 +41,16 @@ export function CharacterCard({detail}: CharacterCardProps) {
     return (
         <>
             <h1>{detail.name}</h1>
-            <img src={detail.image} />
-            <b>Статус:</b> {getStatus(detail)}<br />
-            <b>Вид:</b> {getSpecies(detail)}<br />
-            <b>Тип:</b> {detail.type}<br />
-            <b>Пол:</b> {getGender(detail)}<br />
-            <em>Дата создания: {new Date(detail.created).toLocaleString()}</em>
+            <div className="card card--character">
+                <img src={detail.image} />
+                <div className="card-content">
+                    <b>Статус:</b> {getStatus(detail)}<br />
+                    <b>Вид:</b> {getSpecies(detail)}<br />
+                    <b>Тип:</b> {detail.type}<br />
+                    <b>Пол:</b> {getGender(detail)}<br />
+                    <em>Дата создания: {new Date(detail.created).toLocaleString()}</em>
+                </div>
+            </div>
         </>
     );
 };

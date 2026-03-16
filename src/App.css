@@ -1,3 +1,7 @@
+h1 {
+  margin-bottom: 64px;
+}
+
 .content-grid {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -9,4 +13,25 @@
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
+}
+.category-menu a {
+  text-decoration: none;
+  color: #999;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 32px;
+  display: grid;
+  border-radius: 32px;
+  text-align: left;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card--character {
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+}
+.card--character img {
+  width: 100%;
+  border-radius: 16px;
 }
