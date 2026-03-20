@@ -1,11 +1,10 @@
 import { useMemo } from "react";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useParams } from "react-router";
 import { lang } from "../lang";
 import type { CategoryName } from "../types/common";
 
 export function Category() {
     const params = useParams();
-    const navigate = useNavigate();
 
     const category: string = params.category || '';
 
@@ -19,7 +18,7 @@ export function Category() {
     }, [category]);
 
     if (!isCategoryValid)
-        navigate('/404');
+        return <Navigate to="/404" />
 
     return (
         <>
