@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, Navigate } from "react-router";
 import { data } from '../data/data';
 import { CharacterCard } from "../components/CharacterCard";
 import { LocationCard } from "../components/LocationCard";
@@ -12,7 +12,6 @@ import type { EpisodeItem } from "../types/episodes";
 
 export function Detail() {
     const params = useParams();
-    const navigate = useNavigate();
 
     const category: string = params.category || '';
     const id: string = params.id || '';
@@ -24,7 +23,7 @@ export function Detail() {
     }, [category, id]);
 
     if (!detail)
-        navigate('/');
+        return <Navigate to="/404" />
 
     return (
         <>
