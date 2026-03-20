@@ -49,5 +49,8 @@ export const ru = {
             'episode': 'Эпизод',
             'created': 'Дата создания'
         }
+    },
+    404: {
+        heading: 'Ошибка 404'
     }
 };

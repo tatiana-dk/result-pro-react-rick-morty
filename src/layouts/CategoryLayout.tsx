@@ -1,4 +1,4 @@
-import { Outlet, useNavigate, useParams } from "react-router";
+import { Outlet, useParams } from "react-router";
 import { CategoryMenu } from "../components/CategoryMenu";
 import { useMemo } from "react";
 
@@ -8,20 +8,16 @@ const categories = ['characters', 'locations', 'episodes'];
 
 export function CategoryLayout() {
     const params = useParams();
-    const navigate = useNavigate();
     const category: string = params.category || '';
 
     const isCategoryValid = useMemo(() => {
         return categories.includes(category);
-    }, [category]);
-
-    if (!isCategoryValid)
-        navigate('/404');
+    }, [category]);        
 
     return (
         <>
             <div className="content-grid">
-                <CategoryMenu category={category as CategoryName} />
+                {isCategoryValid && <CategoryMenu category={category as CategoryName} />}
                 <div className="content">
                     <Outlet />
                 </div>
