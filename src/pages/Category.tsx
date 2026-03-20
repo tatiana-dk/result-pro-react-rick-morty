@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router";
+import { lang } from "../lang";
+import type { CategoryName } from "../types/common";
 
 export function Category() {
     const params = useParams();
@@ -13,16 +15,7 @@ export function Category() {
     }, [category]);
 
     const heading: string = useMemo(() => {
-        switch(category) {
-            case 'characters':
-                return 'героя';
-            case 'locations':
-                return 'локацию';
-            case 'episodes':
-                return 'эпизод';
-            default:
-                return '';
-        }
+        return lang.categoryHeading[category as CategoryName] || '';
     }, [category]);
 
     if (!isCategoryValid)

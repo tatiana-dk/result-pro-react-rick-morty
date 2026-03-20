@@ -1,40 +1,16 @@
 import type { CharacterItem, CharacterCardProps } from "../types/characters";
+import { lang } from "../lang";
 
 function getStatus(character: CharacterItem): string {
-    switch(character.status) {
-        case 'Alive':
-            return 'Жив';
-        case 'Dead':
-            return 'Мёртв';
-        case 'unknown':
-            return 'Неизвестен';
-        default:
-            return '';
-    }
+    return lang.character.status[character.status] || '';
 }
 
 function getSpecies(character: CharacterItem): string {
-    switch(character.species) {
-        case 'Human':
-            return 'Человек';
-        case 'Alien':
-            return 'Инопланетянин';
-        default:
-            return '';
-    }
+    return lang.character.species[character.species] || '';
 }
 
 function getGender(character: CharacterItem): string {
-    switch(character.gender) {
-        case 'Male':
-            return 'Мужской';
-        case 'Female':
-            return 'Женский';
-        case 'unknown':
-            return 'Неизвестен';
-        default:
-            return '';
-    }
+    return lang.character.gender[character.gender] || '';
 }
 
 export function CharacterCard({detail}: CharacterCardProps) {
@@ -44,11 +20,11 @@ export function CharacterCard({detail}: CharacterCardProps) {
             <div className="card card--character">
                 <img src={detail.image} />
                 <div className="card-content">
-                    <b>Статус:</b> {getStatus(detail)}<br />
-                    <b>Вид:</b> {getSpecies(detail)}<br />
-                    <b>Тип:</b> {detail.type}<br />
-                    <b>Пол:</b> {getGender(detail)}<br />
-                    <em>Дата создания: {new Date(detail.created).toLocaleString()}</em>
+                    <b>{lang.character.props.status}:</b> {getStatus(detail)}<br />
+                    <b>{lang.character.props.species}:</b> {getSpecies(detail)}<br />
+                    <b>{lang.character.props.type}:</b> {detail.type}<br />
+                    <b>{lang.character.props.gender}:</b> {getGender(detail)}<br />
+                    <em>{lang.character.props.created}: {new Date(detail.created).toLocaleString()}</em>
                 </div>
             </div>
         </>
