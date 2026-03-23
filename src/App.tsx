@@ -11,6 +11,7 @@ import { MainLayout } from './layouts/MainLayout';
 import { CategoryLayout } from './layouts/CategoryLayout';
 import { Header } from './components/Header';
 import { AuthProvider } from './context/AuthProvider';
+import { PrivateRoute } from './components/PrivateRoute';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
 
         <Route element={<MainLayout />}>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/:category' element={<CategoryLayout />}>
+          <Route path='/:category' element={<PrivateRoute><CategoryLayout /></PrivateRoute>}>
             <Route index element={<Category />} />
             <Route path=':id' element={<Detail />} />
           </Route>
