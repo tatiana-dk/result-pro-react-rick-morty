@@ -9,3 +9,9 @@ export interface Data {
 };
 
 export type CategoryName = 'characters' | 'locations' | 'episodes';
+
+export type AuthContextType = {
+    user: string | null;
+    signin: (newUser: string, callback: Function) => void;
+    signout: (callback: Function) => void;
+};
