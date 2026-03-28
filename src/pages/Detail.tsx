@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useParams, Navigate } from "react-router";
-import { data } from '../data/data';
 import { CharacterCard } from "../components/CharacterCard";
 import { LocationCard } from "../components/LocationCard";
 import { EpisodeCard } from "../components/EpisodeCard";
@@ -10,14 +9,17 @@ import type { CharacterItem } from "../types/characters";
 import type { LocationItem } from "../types/locations";
 import type { EpisodeItem } from "../types/episodes";
 
+import { useData } from "../context/DataProvider";
+
 export function Detail() {
     const params = useParams();
+    const data = useData();
 
     const category: string = params.category || '';
     const id: string = params.id || '';
 
     const detail = useMemo(() => {
-        const categoryData = data[category as CategoryName];
+        const categoryData = data.data[category as CategoryName];
         if (!categoryData) return null;
         return categoryData.filter(c => String(c.id) === id)[0] || null;
     }, [category, id]);

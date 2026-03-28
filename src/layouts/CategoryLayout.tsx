@@ -1,8 +1,10 @@
 import { Outlet, useParams } from "react-router";
 import { CategoryMenu } from "../components/CategoryMenu";
 import { useMemo } from "react";
+import { DataProvider } from '../context/DataProvider';
 
 import type { CategoryName } from "../types/common";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 const categories = ['characters', 'locations', 'episodes'];
 
@@ -15,13 +17,13 @@ export function CategoryLayout() {
     }, [category]);        
 
     return (
-        <>
+        <DataProvider>
             <div className="content-grid">
-                {isCategoryValid && <CategoryMenu category={category as CategoryName} />}
+                <ErrorBoundary>{isCategoryValid && <CategoryMenu category={category as CategoryName} />}</ErrorBoundary>
                 <div className="content">
-                    <Outlet />
+                    <ErrorBoundary><Outlet /></ErrorBoundary>
                 </div>
             </div>
-        </>
+        </DataProvider>
     );
 };
