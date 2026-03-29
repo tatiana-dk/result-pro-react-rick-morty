@@ -59,7 +59,6 @@ export function Category() {
                 {loading && <div className="category-loading">Loading...</div>}
                 {error && <div className="category-error">Error</div>}
             </div>
-
         </>
     );
 };
