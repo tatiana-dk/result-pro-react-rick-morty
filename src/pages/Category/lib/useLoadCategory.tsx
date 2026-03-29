@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-import type { Data, CategorySingleName, DataContextData } from "@/shared/config/types";
-import { useData } from '@shared/providers/Data';
+import type { Data, CategorySingleName } from "@/shared/config/types";
 
 export function useLoadCategory(category: CategorySingleName, pageNumber: number) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [categoryItems, setCategoryItems] = useState<Data>([]);
     const [hasMore, setHasMore] = useState(false);
-    const {changeData} = useData();
 
     useEffect(() => {
         setLoading(true);
@@ -30,12 +28,6 @@ export function useLoadCategory(category: CategorySingleName, pageNumber: number
                 ];
             });
 
-            const data: DataContextData = {};
-            data[`${category}s`] = [
-                ...categoryItems,
-                ...res.data.results
-            ];
-            changeData(data, () => {});
             setLoading(false);
             setHasMore(res.data.results.length > 0);
         })
