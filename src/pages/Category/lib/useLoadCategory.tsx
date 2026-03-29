@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-import type { Data, CategoryName } from "@/shared/config/types";
+import type { CategoryItems, CharacterItem, CategoryName } from "@/shared/config/types";
 
 export function useLoadCategory(category: CategoryName, pageNumber: number) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [categoryItems, setCategoryItems] = useState<Data>([]);
+    const [categoryItems, setCategoryItems] = useState<CategoryItems>([]);
     const [hasMore, setHasMore] = useState(false);
 
     useEffect(() => {
@@ -21,10 +21,13 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
             },
         })
         .then((res) => {
-            setCategoryItems((prevState: Data): Data => {
+            setCategoryItems((prevState: CategoryItems): CategoryItems => {
                 return [
                     ...prevState,
-                    ...res.data.results
+                    ...res.data.results.map((item: CharacterItem) => ({
+                        id: item.id,
+                        name: item.name
+                    }))
                 ];
             });
 

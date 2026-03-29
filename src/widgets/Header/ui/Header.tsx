@@ -8,10 +8,16 @@ const names = ['main', 'character', 'location', 'episode'];
 
 export function Header() {
 
-    const paths = names.map(name => ({
-        to: `/${name}`,
-        text: `${lang.navigation[name as NavigationKeysType]}`
-    }));
+    const paths = names.map(name => {
+        let to = name;
+        if (name === 'main')
+            to = '';
+
+        return {
+            to: `/${to}`,
+            text: `${lang.navigation[name as NavigationKeysType]}`
+        };
+    });
 
     return (
         <div className="header">
