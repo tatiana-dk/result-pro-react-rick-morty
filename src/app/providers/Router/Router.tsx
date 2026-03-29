@@ -2,7 +2,6 @@ import { Route, Routes, BrowserRouter } from 'react-router';
 import { lazy } from 'react';
 
 import { MainLayout } from '@/app/ui/MainLayout';
-import { CategoryLayout } from '@/pages/Category/ui/CategoryLayout';
 import { PrivateRoute } from '@/app/providers/Router/PrivateRoute';
 
 const Login = lazy(() => import('@pages/Login').then(module => ({default: module.Login})));
@@ -19,9 +18,9 @@ export function Router() {
 
         <Route element={<MainLayout />}>
           <Route path='/' element={<Home />}></Route>
-            <Route path='/:category' element={<PrivateRoute><CategoryLayout /></PrivateRoute>}>
-              <Route index element={<Category />} />
-              <Route path=':id' element={<Detail />} />
+            <Route path='/:category'>
+              <Route index element={<PrivateRoute><Category /></PrivateRoute>} />
+              <Route path=':id' element={<PrivateRoute><Detail /></PrivateRoute>} />
             </Route>
         </Route>
 
