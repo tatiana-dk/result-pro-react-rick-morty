@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { useParams, Navigate } from "react-router";
-import { CharacterCard } from "../../components/CharacterCard";
-import { LocationCard } from "../../components/LocationCard";
-import { EpisodeCard } from "../../components/EpisodeCard";
+import { CharacterCard } from "../../shared/components/CharacterCard";
+import { LocationCard } from "../../shared/components/LocationCard";
+import { EpisodeCard } from "../../shared/components/EpisodeCard";
 
 import type { CategoryName } from "../../shared/types/common";
 import type { CharacterItem } from "../../shared/types/characters";
 import type { LocationItem } from "../../shared/types/locations";
 import type { EpisodeItem } from "../../shared/types/episodes";
 
-import { useData } from "../../context/DataProvider";
+import { useData } from "../../shared/context/DataProvider";
 
 export function Detail() {
     const params = useParams();

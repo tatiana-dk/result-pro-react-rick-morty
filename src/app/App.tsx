@@ -2,10 +2,10 @@ import { Route, Routes } from 'react-router';
 import { createContext } from 'react';
 
 import './App.css'
-import { MainLayout } from './layouts/MainLayout';
-import { CategoryLayout } from './layouts/CategoryLayout';
-import { AuthProvider } from './context/AuthProvider';
-import { PrivateRoute } from '../components/PrivateRoute';
+import { MainLayout } from '../shared/layouts/MainLayout';
+import { CategoryLayout } from '../shared/layouts/CategoryLayout';
+import { AuthProvider } from '../shared/context/AuthProvider';
+import { PrivateRoute } from '../shared/components/PrivateRoute';
 import { lazy } from 'react';
 
 const Login = lazy(() => import('../pages/Login').then(module => ({default: module.Login})));

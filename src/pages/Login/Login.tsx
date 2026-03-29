@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useLocation, useNavigate } from "react-router";
-import { useAuth } from "../../context/AuthProvider";
+import { useAuth } from "../../shared/context/AuthProvider";
 
 export function Login() {
     const auth = useAuth();
