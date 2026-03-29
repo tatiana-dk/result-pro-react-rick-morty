@@ -1,1 +1,1 @@
-export * from './Page404';
+export * from './ui/Page404';
