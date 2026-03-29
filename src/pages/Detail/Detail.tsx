@@ -4,10 +4,10 @@ import { CharacterCard } from "../../components/CharacterCard";
 import { LocationCard } from "../../components/LocationCard";
 import { EpisodeCard } from "../../components/EpisodeCard";
 
-import type { CategoryName } from "../../types/common";
-import type { CharacterItem } from "../../types/characters";
-import type { LocationItem } from "../../types/locations";
-import type { EpisodeItem } from "../../types/episodes";
+import type { CategoryName } from "../../shared/types/common";
+import type { CharacterItem } from "../../shared/types/characters";
+import type { LocationItem } from "../../shared/types/locations";
+import type { EpisodeItem } from "../../shared/types/episodes";
 
 import { useData } from "../../context/DataProvider";
 

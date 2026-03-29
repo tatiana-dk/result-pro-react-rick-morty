@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { lang } from "../lang";
+import { lang } from "../shared/lang";
 import { AuthStatus } from "./AuthStatus";
 
 export function Header() {

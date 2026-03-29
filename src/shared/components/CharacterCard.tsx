@@ -1,5 +1,5 @@
 import type { CharacterItem, CharacterCardProps } from "../types/characters";
-import { lang } from "../lang";
+import { lang } from "../shared/lang";
 
 function getStatus(character: CharacterItem): string {
     return lang.character.status[character.status] || '';

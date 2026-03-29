@@ -1,5 +1,5 @@
 import type { LocationCardProps } from "../types/locations";
-import { lang } from "../lang";
+import { lang } from "../shared/lang";
 
 export function LocationCard({detail}: LocationCardProps) {
     return (
