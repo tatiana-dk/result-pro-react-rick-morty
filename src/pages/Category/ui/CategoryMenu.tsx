@@ -1,5 +1,5 @@
 import type { CategoryName, CategorySingleName } from "@shared/config/types";
-import { useLoadCategory } from "../libs/useLoadCategory";
+import { useLoadCategory } from "../lib/useLoadCategory";
 import { useState, useRef, useCallback } from "react";
 import { Link } from "react-router";
 
