@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { useParams, Navigate } from "react-router";
-import { CharacterCard } from "../components/CharacterCard";
-import { LocationCard } from "../components/LocationCard";
-import { EpisodeCard } from "../components/EpisodeCard";
+import { CharacterCard } from "../../components/CharacterCard";
+import { LocationCard } from "../../components/LocationCard";
+import { EpisodeCard } from "../../components/EpisodeCard";
 
-import type { CategoryName } from "../types/common";
-import type { CharacterItem } from "../types/characters";
-import type { LocationItem } from "../types/locations";
-import type { EpisodeItem } from "../types/episodes";
+import type { CategoryName } from "../../types/common";
+import type { CharacterItem } from "../../types/characters";
+import type { LocationItem } from "../../types/locations";
+import type { EpisodeItem } from "../../types/episodes";
 
-import { useData } from "../context/DataProvider";
+import { useData } from "../../context/DataProvider";
 
 export function Detail() {
     const params = useParams();

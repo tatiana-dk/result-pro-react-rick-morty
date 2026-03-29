@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Navigate, useParams } from "react-router";
-import { lang } from "../lang";
-import type { CategoryName } from "../types/common";
+import { lang } from "../../lang";
+import type { CategoryName } from "../../types/common";
 
 export function Category() {
     const params = useParams();

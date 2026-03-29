@@ -1,4 +1,4 @@
-import { lang } from "../lang";
+import { lang } from "../../lang";
 
 export function Page404() {
     return (
