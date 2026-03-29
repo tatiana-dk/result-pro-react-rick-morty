@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { useAuth } from "@shared/providers/Auth/AuthProvider";
+import { Button } from "@/shared/ui";
 
 export function AuthStatus({}) {
     const auth = useAuth();
@@ -18,7 +19,7 @@ export function AuthStatus({}) {
     return (
         <>
             <p>Welcome user {auth.user}!</p>
-            <button onClick={handleSignout}>Sign out</button>
+            <Button click={handleSignout} text="Sign out" />
         </>
     );
 };
