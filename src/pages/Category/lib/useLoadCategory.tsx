@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios, { type Canceler } from 'axios';
+import axios from 'axios';
 
 import type { Data, CategorySingleName, DataContextData } from "@/shared/config/types";
 import { useData } from '@shared/providers/Data';
@@ -15,14 +15,12 @@ export function useLoadCategory(category: CategorySingleName, pageNumber: number
         setLoading(true);
         setError(false);
 
-        let cancel: Canceler;
         axios({
             method: 'GET',
             url: `https://rickandmortyapi.com/api/${category}`,
             params: {
                 page: pageNumber
             },
-            cancelToken: new axios.CancelToken((c) => cancel = c)
         })
         .then((res) => {
             setCategoryItems((prevState: Data): Data => {
@@ -49,8 +47,6 @@ export function useLoadCategory(category: CategorySingleName, pageNumber: number
             setError(false);
             console.error(error);
         });
-
-        return () => cancel();
     }, [category, pageNumber]);
 
     return {
