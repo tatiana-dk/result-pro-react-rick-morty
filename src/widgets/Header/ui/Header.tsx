@@ -4,7 +4,7 @@ import { Navigation } from "@/shared/ui";
 
 type NavigationKeysType = keyof typeof lang.navigation;
 
-const names = ['main', 'characters', 'locations', 'episodes'];
+const names = ['main', 'character', 'location', 'episode'];
 
 export function Header() {
 

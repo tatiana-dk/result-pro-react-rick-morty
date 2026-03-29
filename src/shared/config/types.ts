@@ -39,11 +39,7 @@ export interface EpisodeCardProps {
 
 export type Data = CharacterItem[] | LocationItem[] | EpisodeItem[];
 
-export type CategoryName = 'characters' | 'locations' | 'episodes';
-
-export type CategorySingleName = 'character' | 'location' | 'episode';
-
-
+export type CategoryName = 'character' | 'location' | 'episode';
 
 export interface DataContextData {
     characters?: CharacterItem[];

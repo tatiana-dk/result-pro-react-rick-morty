@@ -26,9 +26,9 @@ export function Detail() {
 
     return (
         <>
-            {category === 'characters' && <CharacterCard detail={detail as CharacterItem} />}
-            {category === 'locations' && <LocationCard detail={detail as LocationItem} />}
-            {category === 'episodes' && <EpisodeCard detail={detail as EpisodeItem} />}
+            {category === 'character' && <CharacterCard detail={detail as CharacterItem} />}
+            {category === 'location' && <LocationCard detail={detail as LocationItem} />}
+            {category === 'episode' && <EpisodeCard detail={detail as EpisodeItem} />}
         </>
     );
 };
