@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-import type { Data, CategorySingleName } from "@/shared/config/types";
+import type { Data, CategoryName } from "@/shared/config/types";
 
-export function useLoadCategory(category: CategorySingleName, pageNumber: number) {
+export function useLoadCategory(category: CategoryName, pageNumber: number) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [categoryItems, setCategoryItems] = useState<Data>([]);
