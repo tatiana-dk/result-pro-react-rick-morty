@@ -1,15 +1,22 @@
-import { Link } from "react-router";
 import { lang } from "@shared/config/lang";
 import { AuthStatus } from "./AuthStatus";
+import { Navigation } from "@/shared/ui";
+
+type NavigationKeysType = keyof typeof lang.navigation;
+
+const names = ['main', 'characters', 'locations', 'episodes'];
 
 export function Header() {
+
+    const paths = names.map(name => ({
+        to: `/${name}`,
+        text: `${lang.navigation[name as NavigationKeysType]}`
+    }));
+
     return (
         <div className="header">
             <div className="header-nav">
-                <Link to="/">{lang.navigation.main}</Link>
-                <Link to="/characters">{lang.navigation.characters}</Link>
-                <Link to="/locations">{lang.navigation.locations}</Link>
-                <Link to="/episodes">{lang.navigation.episodes}</Link>
+                <Navigation paths={paths} />
             </div>
             <AuthStatus />
         </div>
