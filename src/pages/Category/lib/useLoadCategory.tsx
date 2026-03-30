@@ -10,6 +10,13 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
     const [hasMore, setHasMore] = useState(false);
 
     useEffect(() => {
+        setCategoryItems([]);
+        setLoading(false);
+        setError(false);
+        setHasMore(false);
+    }, [category]);
+
+    useEffect(() => {
         setLoading(true);
         setError(false);
 
