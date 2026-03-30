@@ -7,12 +7,14 @@ import { useLoadCategory } from "../lib/useLoadCategory";
 const validValues = ['character', 'location', 'episode'];
 
 export function Category() {
+    // console.log('render')
     const params = useParams();
     const [pageNumber, setPageNumber] = useState(1);
 
     const category: string = params.category || '';
 
     useEffect(() => {
+        console.log(1)
         setPageNumber(1);
     }, [category]);
 
@@ -33,6 +35,7 @@ export function Category() {
 
         observer.current = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && hasMore) {
+                console.log(2)
                 setPageNumber(prev => prev + 1);
             }
         });

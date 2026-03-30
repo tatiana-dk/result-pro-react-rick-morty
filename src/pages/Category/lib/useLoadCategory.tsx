@@ -4,12 +4,14 @@ import axios from 'axios';
 import type { CategoryItems, CharacterItem, CategoryName } from "@/shared/config/types";
 
 export function useLoadCategory(category: CategoryName, pageNumber: number) {
+    console.log('call useLoadCategory')
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [categoryItems, setCategoryItems] = useState<CategoryItems>([]);
     const [hasMore, setHasMore] = useState(false);
 
     useEffect(() => {
+        console.log('clear category items')
         setCategoryItems([]);
         setLoading(false);
         setError(false);
@@ -20,6 +22,9 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
         setLoading(true);
         setError(false);
 
+        console.log('categoryItems', categoryItems)
+        console.log('pageNumber', pageNumber)
+
         axios({
             method: 'GET',
             url: `https://rickandmortyapi.com/api/${category}`,
@@ -29,6 +34,8 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
         })
         .then((res) => {
             setCategoryItems((prevState: CategoryItems): CategoryItems => {
+                if (!prevState.length && pageNumber !== 1) return [...prevState];
+                
                 return [
                     ...prevState,
                     ...res.data.results.map((item: CharacterItem) => ({
@@ -39,7 +46,7 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
             });
 
             setLoading(false);
-            setHasMore(res.data.results.length > 0);
+            setHasMore(pageNumber < res.data.info.pages);
         })
         .catch(error => {
             if (axios.isCancel(error)) {
