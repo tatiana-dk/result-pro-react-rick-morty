@@ -1,16 +1,20 @@
-import { useMemo, useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Navigate, useParams, Link } from "react-router";
 import { lang } from "@shared/config/lang";
 import type { CategoryName } from "@/shared/config/types";
 import { useLoadCategory } from "../lib/useLoadCategory";
 
-const validValues = ['characters', 'locations', 'episodes'];
+const validValues = ['character', 'location', 'episode'];
 
 export function Category() {
     const params = useParams();
     const [pageNumber, setPageNumber] = useState(1);
 
     const category: string = params.category || '';
+
+    useEffect(() => {
+        setPageNumber(1);
+    }, [category]);
 
     const {
         loading,

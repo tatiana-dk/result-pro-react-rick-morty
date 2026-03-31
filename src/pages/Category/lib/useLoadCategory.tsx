@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-import type { Data, CategoryName } from "@/shared/config/types";
+import type { CategoryItems, CharacterItem, CategoryName } from "@/shared/config/types";
 
 export function useLoadCategory(category: CategoryName, pageNumber: number) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [categoryItems, setCategoryItems] = useState<Data>([]);
+    const [categoryItems, setCategoryItems] = useState<CategoryItems>([]);
     const [hasMore, setHasMore] = useState(false);
+
+    useEffect(() => {
+        setCategoryItems([]);
+        setLoading(false);
+        setError(false);
+        setHasMore(false);
+    }, [category]);
 
     useEffect(() => {
         setLoading(true);
@@ -21,22 +28,28 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
             },
         })
         .then((res) => {
-            setCategoryItems((prevState: Data): Data => {
+            setCategoryItems((prevState: CategoryItems): CategoryItems => {
+                if (!prevState.length && pageNumber !== 1) return [...prevState];
+                
                 return [
                     ...prevState,
-                    ...res.data.results
+                    ...res.data.results.map((item: CharacterItem) => ({
+                        id: item.id,
+                        name: item.name
+                    }))
                 ];
             });
 
             setLoading(false);
-            setHasMore(res.data.results.length > 0);
+            setHasMore(pageNumber < res.data.info.pages);
         })
         .catch(error => {
             if (axios.isCancel(error)) {
                 return;
             }
 
-            setError(false);
+            setLoading(false);
+            setError(true);
             console.error(error);
         });
     }, [category, pageNumber]);

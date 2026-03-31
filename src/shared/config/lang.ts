@@ -1,14 +1,14 @@
 const ru = {
     navigation: {
         'main': 'Главная',
-        'characters': 'Персонажи',
-        'locations': 'Локации',
-        'episodes': 'Эпизоды'
+        'character': 'Персонажи',
+        'location': 'Локации',
+        'episode': 'Эпизоды'
     },
     categoryHeading: {
-        'characters': 'героя',
-        'locations': 'локацию',
-        'episodes': 'эпизод'
+        'character': 'героя',
+        'location': 'локацию',
+        'episode': 'эпизод'
     },
     character: {
         props: {
@@ -51,7 +51,8 @@ const ru = {
         }
     },
     404: {
-        heading: 'Ошибка 404'
+        heading: 'Ошибка 404',
+        link: 'На главную'
     }
 };
 
