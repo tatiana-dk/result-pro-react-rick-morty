@@ -4,14 +4,12 @@ import axios from 'axios';
 import type { CategoryItems, CharacterItem, CategoryName } from "@/shared/config/types";
 
 export function useLoadCategory(category: CategoryName, pageNumber: number) {
-    console.log('call useLoadCategory')
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [categoryItems, setCategoryItems] = useState<CategoryItems>([]);
     const [hasMore, setHasMore] = useState(false);
 
     useEffect(() => {
-        console.log('clear category items')
         setCategoryItems([]);
         setLoading(false);
         setError(false);
@@ -21,9 +19,6 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
     useEffect(() => {
         setLoading(true);
         setError(false);
-
-        console.log('categoryItems', categoryItems)
-        console.log('pageNumber', pageNumber)
 
         axios({
             method: 'GET',
@@ -53,7 +48,8 @@ export function useLoadCategory(category: CategoryName, pageNumber: number) {
                 return;
             }
 
-            setError(false);
+            setLoading(false);
+            setError(true);
             console.error(error);
         });
     }, [category, pageNumber]);
