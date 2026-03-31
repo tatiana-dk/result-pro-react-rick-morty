@@ -19,16 +19,13 @@ export function Detail() {
             detail
         } = useLoadDetail(category as CategoryName, id);
 
-    if (!detail)
-        return <Navigate to="/404" />
-
     return (
         <>
             {loading && <div>Loading...</div>}
             {error && <div>Error</div>}
-            {category === 'character' && <CharacterCard detail={detail as CharacterItem} />}
-            {category === 'location' && <LocationCard detail={detail as LocationItem} />}
-            {category === 'episode' && <EpisodeCard detail={detail as EpisodeItem} />}
+            {category === 'character' && detail && <CharacterCard detail={detail as CharacterItem} />}
+            {category === 'location' && detail && <LocationCard detail={detail as LocationItem} />}
+            {category === 'episode' && detail && <EpisodeCard detail={detail as EpisodeItem} />}
         </>
     );
 };
