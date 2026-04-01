@@ -1,0 +1,36 @@
+{
+    "name": "RM application",
+    "short_name": "RM App",
+    "description": "Rick and Morty application",
+    "start_url": "/",
+    "display": "standalone",
+    "scope": "/",
+    "background_color": "#ffffff",
+    "icons": [
+        {
+            "src": "/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/apple-touch-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/apple-touch-icon-167x167.png",
+            "sizes": "167x167",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/apple-touch-icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        }
+    ]
+}
