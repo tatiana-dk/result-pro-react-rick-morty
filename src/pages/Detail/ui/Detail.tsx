@@ -1,5 +1,4 @@
-import { useMemo } from "react";
-import { useParams, Navigate } from "react-router";
+import { useParams } from "react-router";
 import { CharacterCard } from "./CharacterCard";
 import { LocationCard } from "./LocationCard";
 import { EpisodeCard } from "./EpisodeCard";

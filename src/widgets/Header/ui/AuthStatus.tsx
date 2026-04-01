@@ -18,8 +18,7 @@ export function AuthStatus({}) {
 
     return (
         <>
-            <p>Welcome user {auth.user}!</p>
-            <Button click={handleSignout} text="Sign out" />
+            <Button click={handleSignout} text="Log out" />
         </>
     );
 };
