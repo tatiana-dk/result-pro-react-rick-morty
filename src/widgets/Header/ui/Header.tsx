@@ -1,6 +1,7 @@
 import { lang } from "@shared/config/lang";
 import { AuthStatus } from "./AuthStatus";
 import { Navigation } from "@/shared/ui";
+import './Header.css';
 
 type NavigationKeysType = keyof typeof lang.navigation;
 

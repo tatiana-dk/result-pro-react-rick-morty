@@ -1,0 +1,18 @@
+.header {
+  height: var(--header-height);
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.header-nav a {
+  text-decoration: none;
+  color: #999;
+}
