@@ -12,12 +12,17 @@ export function AuthStatus({}) {
         });
     };
 
+    const handleSignin = () => {
+        navigate('/login');
+    };
+
     if (auth.user === null) {
-        return <p>You are not logged in.</p>
+        return <Button click={handleSignin} text="Log in" />
     }
 
     return (
         <>
+            <p>{auth.user}</p>
             <Button click={handleSignout} text="Log out" />
         </>
     );

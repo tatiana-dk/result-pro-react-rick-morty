@@ -71,10 +71,10 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
+  margin: 32px 0 64px;
   @media (max-width: 1024px) {
     font-size: 36px;
-    margin: 20px 0;
+    margin: 16px 0;
   }
 }
 h2 {
@@ -103,11 +103,6 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
-}
-
-
-h1 {
-  margin-bottom: 64px;
 }
 
 .page {
@@ -153,4 +148,19 @@ h1 {
 .card--character img {
   width: 100%;
   border-radius: 16px;
+}
+
+@media(max-width: 767px) {
+  .card--character {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.burger {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
 }
