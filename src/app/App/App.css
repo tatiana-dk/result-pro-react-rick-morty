@@ -71,10 +71,10 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
+  margin: 32px 0 64px;
   @media (max-width: 1024px) {
     font-size: 36px;
-    margin: 20px 0;
+    margin: 16px 0;
   }
 }
 h2 {
@@ -105,37 +105,12 @@ code {
   background: var(--code-bg);
 }
 
-
-h1 {
-  margin-bottom: 64px;
-}
-
 .page {
   --page-gap: 32px;
   --header-height: 64px;
 
   display: grid;
   gap: var(--page-gap);
-}
-
-.header {
-  height: var(--header-height);
-  background-color: #efefef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 64px;
-}
-.header-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-}
-.header-nav a {
-  text-decoration: none;
-  color: #999;
-  padding: 16px;
 }
 
 .content-grid {
@@ -173,4 +148,19 @@ h1 {
 .card--character img {
   width: 100%;
   border-radius: 16px;
+}
+
+@media(max-width: 767px) {
+  .card--character {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.burger {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
 }
